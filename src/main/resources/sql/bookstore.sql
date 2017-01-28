@@ -1,4 +1,3 @@
-CREATE DATABASE bookstore;
 
 /*用户表*/
 CREATE TABLE tb_user(
