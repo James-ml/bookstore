@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.user.web.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategoryServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.category.web.servlet.CategoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryServlet</servlet-name>
+        <url-pattern>/CategoryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.book.web.servlet.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/BookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.cart.web.servlet.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.order.web.servlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
