@@ -21,9 +21,9 @@
   <body>
 <h1>${msg }</h1>
 <ul>
-  <li><a href="<c:url value='/index.jsp'/>" target="_top">主页</a></li>
-  <li><a href="<c:url value='/jsps/user/login.jsp'/>" target="_top">登录</a></li>
-  <li><a href="<c:url value='/jsps/user/regist.jsp'/>" target="_top">注册</a></li>
+  <li><a href="<c:url value='/index.jsp'/>" target="_parent">主页</a></li>
+  <li><a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">登录</a></li>
+  <li><a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册</a></li>
 </ul>
   </body>
 </html>

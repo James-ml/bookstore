@@ -67,6 +67,5 @@
       <input type="text" size="3" name="count" value="1"/>
   </form>
   <a href="javascript:document.getElementById('form').submit();"></a>
-  <span style="color: red; font-weight: 900 ;font-size: 30px">${msg }</span>
   </body>
 </html>

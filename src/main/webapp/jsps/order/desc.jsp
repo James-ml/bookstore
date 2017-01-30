@@ -57,26 +57,30 @@
 <table border="1" width="100%" cellspacing="0" background="black">
 	<tr bgcolor="gray" bordercolor="gray">
 		<td colspan="6">
-			订单编号：123456　成交时间：2000-01-01 15:30　金额：<font color="red"><b>319.2元</b></font>
+			订单编号：${order.oid }　成交时间：<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${order.ordertime }"/>　
+			金额：<font color="red"><b>${order.total }元</b></font>
 		</td>
 	</tr>
 
+<c:forEach items="${order.orderItemList }" var="orderItem">
 	<tr bordercolor="gray" align="center">
 		<td width="15%">
-			<div><img src="<c:url value='/book_img/9317290-1_l.jpg'/>" height="75"/></div>
+			<div><img src="<c:url value='/${orderItem.book.image }'/>" height="75"/></div>
 		</td>
-		<td>书名：Java详解</td>
-		<td>单价：39.9元</td>
-		<td>作者：张孝祥</td>
-		<td>数量：2</td>
-		<td>小计：79.8元</td>
+		<td>书名：${orderItem.book.bname }</td>
+		<td>单价：${orderItem.book.price }元</td>
+		<td>作者：${orderItem.book.author }</td>
+		<td>数量：${orderItem.count }</td>
+		<td>小计：${orderItem.subtotal }元</td>
 	</tr>
+</c:forEach>
 
 </table>
 <br/>
-<form method="post" action="javascript:alert('别点了，再点就去银行页面了！');" id="form" target="_parent">
+<form method="post" action="<c:url value='/OrderServlet'/>" id="form" target="_parent">
+	<input type="hidden" name="method" value="zhiFu"/>
+	<input type="hidden" name="oid" value="${order.oid }"/>
 	收货地址：<input type="text" name="address" size="50" value="北京市海淀区金燕龙大厦2楼216室无敌收"/><br/>
-
 	选择银行：<br/>
 	<input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
 	<img src="../../bank_img/icbc.bmp" align="middle"/>

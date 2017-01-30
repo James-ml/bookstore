@@ -57,4 +57,18 @@ public class OrderService {
 		 */
         orderDao.updateState(oid, 4);
     }
+
+    //支付方法
+    public void zhiFu(String oid) {
+		/*
+		 * 1. 获取订单的状态
+		 *   * 如果状态为1，那么执行下面代码
+		 *   * 如果状态不为1，那么本方法什么都不做
+		 */
+        int state = orderDao.getStateByOid(oid);
+        if(state == 1) {
+            // 修改订单状态为2
+            orderDao.updateState(oid, 2);
+        }
+    }
 }

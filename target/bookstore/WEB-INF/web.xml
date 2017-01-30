@@ -35,8 +35,8 @@
         <servlet-class>cn.Jims.bookstore.cart.web.servlet.CartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CartServlet</servlet-name>
-        <url-pattern>/CartServlet</url-pattern>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -46,5 +46,32 @@
     <servlet-mapping>
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/OrderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminCategoryServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.back.web.servlet.AdminCategoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminCategoryServlet</servlet-name>
+        <url-pattern>/AdminCategoryServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminBookServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.back.web.servlet.AdminBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminBookServlet</servlet-name>
+        <url-pattern>/AdminBookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminAddBookServlet</servlet-name>
+        <servlet-class>cn.Jims.bookstore.back.web.servlet.AdminAddBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAddBookServlet</servlet-name>
+        <url-pattern>/AdminAddBookServlet</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,5 +1,6 @@
 package cn.Jims.bookstore.user.web.servlet;
 
+import cn.Jims.bookstore.cart.entity.Cart;
 import cn.Jims.bookstore.user.UserException.UserException;
 import cn.Jims.bookstore.user.entity.User;
 import cn.Jims.bookstore.user.service.UserService;
@@ -169,7 +170,7 @@ public class UserServlet extends BaseServlet {
             // 1. 保存错误信息
             request.setAttribute("errors", errors);
             // 2. 保存表单数据(回显)
-            request.setAttribute("form", form2);
+            request.setAttribute("form2", form2);
             // 3. 转发到regist.jsp
             return "f:/jsps/user/login.jsp";
         }
@@ -179,6 +180,7 @@ public class UserServlet extends BaseServlet {
             //为了确保上次访问的安全，先销毁之前的session
             request.getSession().invalidate();
             request.getSession().setAttribute("session_user", user);
+            request.getSession().setAttribute("cart", new Cart());
             return "r:/index.jsp";//重定向
         } catch (UserException e) {
             request.setAttribute("msg", e.getMessage());

@@ -29,11 +29,11 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/UserServlet'/>" method="post">
 	<input type="hidden" name="method" value="login"/>
-	用户名：<input type="text" name="username" value="${form.username }"/>
+	用户名：<input type="text" name="username" value="${form2.username }"/>
 	<span style="color: red; font-weight: 900">${errors.username }</span>
 	<br/>
-	密　码：<input type="password" name="password" value="${form.password }"/>
-	<span style="color: red; font-weight: 900">${errors.username }</span>
+	密　码：<input type="password" name="password" value="${form2.password }"/>
+	<span style="color: red; font-weight: 900">${errors.password }</span>
 	<br/>
 	<input type="submit" value="登录"/>
 </form>

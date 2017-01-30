@@ -19,7 +19,7 @@ public class BookDao {
     //查询所有图书
     public List<Book> findAll() {
         try {
-            String sql = "select * from book";
+            String sql = "select * from book where del = 0";
             return qr.query(sql, new BeanListHandler<Book>(Book.class));
         } catch (SQLException e) {
             throw new RuntimeException();
@@ -29,7 +29,7 @@ public class BookDao {
     //按分类查询图书(由于Book表关联了Category表，所以可以根据cid查询)
     public List<Book> findByCategory(String cid) {
         try {
-            String sql = "select * from book where cid=?";
+            String sql = "select * from book where cid=? and del = 0";
             return qr.query(sql, new BeanListHandler<Book>(Book.class), cid);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -39,7 +39,7 @@ public class BookDao {
     //加载图书的方法
     public Book findById(String bid) {
         try {
-            String sql = "select * from book where bid=?";
+            String sql = "select * from book where bid=? and del = 0";
             return qr.query(sql, new BeanHandler<Book>(Book.class), bid);
         } catch (SQLException e) {
             throw new RuntimeException(e);

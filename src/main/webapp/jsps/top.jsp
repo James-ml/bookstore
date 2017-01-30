@@ -41,7 +41,7 @@
 		<c:otherwise>
 			您好：${sessionScope.session_user.username }&nbsp;&nbsp;|&nbsp;&nbsp;
 			<a href="<c:url value='/jsps/cart/list.jsp'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href="<c:url value='/jsps/order/list.jsp'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">我的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 			<%--_parent就是打开的页面只是在父页面中打开
 				_top就是打开的页面占据了整个页面
 			--%>

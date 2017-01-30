@@ -9,6 +9,7 @@ public class Book {
     private String author;
     private String image;
     private Category category;//关联分类表
+    private boolean del;
 
     public String getBid() {
         return bid;
@@ -56,5 +57,13 @@ public class Book {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public boolean isDel() {
+        return del;
+    }
+
+    public void setDel(boolean del) {
+        this.del = del;
     }
 }

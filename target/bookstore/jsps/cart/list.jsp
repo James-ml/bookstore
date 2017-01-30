@@ -3,7 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -56,16 +55,12 @@
   
   <body>
 <h1>购物车</h1>
-<%--判断购物车是否有商品条目--%>
 <c:choose>
-	<%--判断购物车是够为空（表示未登录），条目是否为0--%>
-	<c:when test="${empty sessionScope.cart or fn:length(sessionScope.cart.cartItems) eq 0 }">
-		<%--返回一张图片--%>
+	<%-- 如果没有车，或车的内容集合为0长 --%>
+	<c:when test="${empty sessionScope.cart or fn:length(sessionScope.cart.cartItems) eq 0}">
 		<img src="<c:url value='/images/cart.png'/>" width="300"/>
 	</c:when>
 	<c:otherwise>
-
-
 <table border="1" width="100%" cellspacing="0" background="black">
 	<tr>
 		<td colspan="7" align="right" style="font-size: 15pt; font-weight: 900">
@@ -82,7 +77,7 @@
 		<th>操作</th>
 	</tr>
 
-	<c:forEach items="${sessionScope.cart.cartItems }" var="cartItem">
+<c:forEach items="${sessionScope.cart.cartItems }" var="cartItem">
 	<tr>
 		<td><div><img src="<c:url value='/${cartItem.book.image }'/>"/></div></td>
 		<td>${cartItem.book.bname }</td>
@@ -92,7 +87,8 @@
 		<td>${cartItem.subtotal }元</td>
 		<td><a href="<c:url value='/CartServlet?method=delete&bid=${cartItem.book.bid }'/>">删除</a></td>
 	</tr>
-	</c:forEach>
+</c:forEach>
+
 	<tr>
 		<td colspan="7" align="right" style="font-size: 15pt; font-weight: 900">
 			合计：${sessionScope.cart.total }元

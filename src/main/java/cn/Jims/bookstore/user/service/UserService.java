@@ -6,6 +6,7 @@ import cn.Jims.bookstore.user.entity.User;
 
 /**
  * user业务层
+ * 表单验证自定义异常信息
  * Created by Jims on 2017/1/26.
  */
 public class UserService {
